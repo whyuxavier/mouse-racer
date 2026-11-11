@@ -153,7 +153,7 @@ h2{font-size:clamp(28px,6vw,44px);font-weight:700;line-height:1;margin-bottom:22
 .chip.lv{background:var(--y)}
 .chip img{height:16px}
 .chip.ht img{height:15px}.chip.ht img.e{filter:grayscale(1) brightness(1.5);opacity:.5}
-#bPause{pointer-events:auto;background:var(--n);color:#fff;min-width:44px;justify-content:center;font-size:18px}
+#bPause{pointer-events:auto;background:var(--n);min-width:44px;justify-content:center;padding:4px 6px}#bPause img{height:20px}
 .nitro{margin:9px auto 0;width:min(250px,62vw);display:flex;align-items:center;gap:6px;background:var(--k);border:3px solid var(--k);padding:3px 6px;color:#fff;font-size:12px;font-weight:700}
 .nitro img{height:14px}
 .nbar{flex:1;height:12px;background:#3a3d46}
@@ -190,7 +190,7 @@ h2{font-size:clamp(28px,6vw,44px);font-weight:700;line-height:1;margin-bottom:22
     <div class="chip lv"><small data-t="lvl"></small><b id="hLvl">1</b></div>
     <div class="chip"><img class="pi" data-pix="coin" alt=""><b id="hCoins">0</b></div>
     <div class="chip ht" id="hHearts"></div>
-    <button class="chip" id="bPause" aria-label="Pause">II</button>
+    <button class="chip" id="bPause" aria-label="Pause"><img class="pi" data-pix="pause" alt=""></button>
   </div>
   <div class="nitro" id="hNitro"><img class="pi" id="hNico" alt=""><div class="nbar"><i id="hNfill"></i></div><span id="hNtxt"></span></div>
 </div>
@@ -465,6 +465,7 @@ const ICON={
   coin:'..kkkk../.kyyyyk./kyyooyyk/kyoyyyyk/kyoyyyyk/kyyooyyk/.kyyyyk./..kkkk..',
   star:'...kk.../..kyyk../kkkyykkk/kyyyyyyk/.kyyyyk./.kyyyyk./kyyk.kyyk/kkk..kkk',
   inf:'.kk...kk./k..k.k..k/k...k...k/k..k.k..k/.kk...kk.',
+  pause:'ww.ww/ww.ww/ww.ww/ww.ww/ww.ww/ww.ww',
   play:'kk....../kkkk..../kkkkkk../kkkkkkkk/kkkkkkkk/kkkkkk../kkkk..../kk......',
   car:'.rrrr./krrrrk/krrrrk/.cccc./.rrrr./.rrrr./krrrrk/krrrrk/.rrrr.',
   bars:'......bb/......bb/...gg.bb/...gg.bb/rr.gg.bb/rr.gg.bb/kkkkkkkk',
