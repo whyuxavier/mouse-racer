@@ -19,6 +19,15 @@ html,body{height:100%;overflow:hidden;overscroll-behavior:none;background:var(--
 button{font:inherit;color:inherit;cursor:pointer}
 img.pi{image-rendering:pixelated;display:block}
 #cv{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:none;background:#6cc24a}
+html[data-season=winter]{--bg:#e4eefb}
+html[data-season=winter] #cv{background:#eef4ff}
+html[data-season=winter] .logo span+span{background:var(--b)}
+html[data-season=winter] .logo span+span::after{content:"";position:absolute;left:-5px;right:-5px;top:-9px;height:12px;background:#fff;border:5px solid var(--k);border-radius:0 0 9px 9px/0 0 7px 7px;clip-path:polygon(0 0,100% 0,100% 60%,88% 100%,72% 55%,55% 100%,40% 60%,22% 100%,8% 55%,0 100%)}
+html[data-season=winter] .logo span+span{position:relative}
+#snow{position:fixed;inset:0;z-index:12;pointer-events:none;overflow:hidden}
+#snow i{position:absolute;top:-14px;width:7px;height:7px;background:#fff;border:2px solid var(--k);animation:fall linear infinite;animation-duration:var(--d);animation-delay:var(--l);left:var(--x);opacity:.95}
+@keyframes fall{to{transform:translate(-30px,105vh)}}
+@media (prefers-reduced-motion:reduce){#snow{display:none}}
 
 /* ---------- header ---------- */
 #top{position:fixed;top:12px;right:12px;z-index:30;display:flex;gap:10px}
@@ -421,7 +430,7 @@ uk:{lead:'Аркадні перегони, де комп’ютерна миша
  pauseT:'Пауза',resume:'Продовжити',restart:'Заново',menu:'Меню',
  overT:'Аварія!',score:'Очки',coins:'Монети',level:'Рівень',newRec:'НОВИЙ РЕКОРД!',
  nLock:'РІВ {n}',nReady:'ОБИДВІ!',bLvl:'РІВЕНЬ {n}',bLane:'+1 СМУГА',bNitro:'НІТРО: ОБИДВІ КНОПКИ РАЗОМ',bMax:'МАКСИМАЛЬНА ШВИДКІСТЬ',
- info:'<p>Аркадні перегони на літньому шосе. Машина їде сама — ти лише перестроюєшся.</p><h3>Правила</h3><ul><li>Оминай машини та збирай монети.</li><li>Що вищий рівень — то швидше; на 3 і 5 рівнях додається смуга.</li><li>Нітро відкривається на 3 рівні й вмикається, коли шкала повна.</li><li>Безкінечний — без програшу. Виживання — сердець: {s}. Хардкор — сердець: {h}, без відновлення.</li></ul><h3>Керування</h3><ul><li><b>Миша:</b> ліва кнопка — смуга ліворуч, права — праворуч, обидві разом — нітро.</li><li><b>Сенсор:</b> тап по лівій або правій половині екрана; обидві половини двома пальцями — нітро.</li><li>Клавіатура не потрібна.</li></ul>'},
+ info:'<p>Аркадні перегони на заміському шосе: улітку — зелені луки, узимку (20.11–01.03) — сніг. Машина їде сама — ти лише перестроюєшся.</p><h3>Правила</h3><ul><li>Оминай машини та збирай монети.</li><li>Що вищий рівень — то швидше; на 3 і 5 рівнях додається смуга.</li><li>Нітро відкривається на 3 рівні й вмикається, коли шкала повна.</li><li>Безкінечний — без програшу. Виживання — сердець: {s}. Хардкор — сердець: {h}, без відновлення.</li></ul><h3>Керування</h3><ul><li><b>Миша:</b> ліва кнопка — смуга ліворуч, права — праворуч, обидві разом — нітро.</li><li><b>Сенсор:</b> тап по лівій або правій половині екрана; обидві половини двома пальцями — нітро.</li><li>Клавіатура не потрібна.</li></ul>'},
 en:{lead:'An arcade racer where your mouse is the steering wheel. Switch lanes, grab coins, hit Nitro!',
  play:'Play',car:'My car',ach:'Achievements',stats:'Statistics',set:'Settings',back:'← Back',
  modeT:'Choose a mode',m_endless:'Endless',d_endless:'Drive forever. Crashes only slow you down.',
@@ -435,7 +444,7 @@ en:{lead:'An arcade racer where your mouse is the steering wheel. Switch lanes, 
  pauseT:'Paused',resume:'Resume',restart:'Restart',menu:'Main menu',
  overT:'Crashed!',score:'Score',coins:'Coins',level:'Level',newRec:'NEW RECORD!',
  nLock:'LVL {n}',nReady:'BOTH!',bLvl:'LEVEL {n}',bLane:'+1 LANE',bNitro:'NITRO: PRESS BOTH AT ONCE',bMax:'MAXIMUM SPEED',
- info:'<p>An arcade racer on a summer highway. The car drives itself — you only switch lanes.</p><h3>Rules</h3><ul><li>Dodge traffic and collect coins.</li><li>Each level is faster; levels 3 and 5 add a lane.</li><li>Nitro unlocks at level 3 and fires when the bar is full.</li><li>Endless — no game over. Survival — hearts: {s}. Hardcore — hearts: {h}, no recovery.</li></ul><h3>Controls</h3><ul><li><b>Mouse:</b> left button — one lane left, right button — one lane right, both together — Nitro.</li><li><b>Touch:</b> tap the left or right half of the screen; both halves with two fingers — Nitro.</li><li>No keyboard needed.</li></ul>'}
+ info:'<p>An arcade racer on a country highway: green fields in summer, snow in winter (20 Nov – 1 Mar). The car drives itself — you only switch lanes.</p><h3>Rules</h3><ul><li>Dodge traffic and collect coins.</li><li>Each level is faster; levels 3 and 5 add a lane.</li><li>Nitro unlocks at level 3 and fires when the bar is full.</li><li>Endless — no game over. Survival — hearts: {s}. Hardcore — hearts: {h}, no recovery.</li></ul><h3>Controls</h3><ul><li><b>Mouse:</b> left button — one lane left, right button — one lane right, both together — Nitro.</li><li><b>Touch:</b> tap the left or right half of the screen; both halves with two fingers — Nitro.</li><li>No keyboard needed.</li></ul>'}
 };
 function t(k,v){let s=(T[save.lang]||T.uk)[k];if(s==null)s=T.en[k]!=null?T.en[k]:k;
   const d=Object.assign({s:MODES.survival.hearts,h:MODES.hardcore.hearts},v||{});
@@ -551,11 +560,50 @@ const SPR={
   lamp:pix('kkk........./ksksssssyyy/kkk......yyy'),
   rock:pix('.sss./sssss/sswss/.sss.')
 };
+/* ---- зима: ялинки в снігу, сніговики, голі дерева, кучугури ---- */
+PAL.e='#1f6b4a';PAL.E='#2d8a5e';PAL.W='#f4f9ff';PAL.i='#cfe0f5';PAL.t='#6b4a2b';PAL.O='#ff8c2b';
+const spruce=(h,w)=>mk(w+4,h+4,g=>{const cx=(w>>1)+2,rows=[];
+  for(let y=0;y<h;y++){const t=y/h,hw=Math.max(1,Math.round((w/2)*(.15+.85*t)));const tier=Math.floor(t*3),off=(t*3-tier)*hw*.35|0;rows.push(hw-off);}
+  g.fillStyle='rgba(0,0,0,.18)';rows.forEach((ww,y)=>g.fillRect(cx-ww+2,y+3,ww*2,1));g.fillRect(cx+1,h+2,3,2);
+  for(let y=0;y<h;y++){const ww=rows[y];
+    g.fillStyle=y%6<2?PAL.W:(y%6<4?PAL.E:PAL.e);g.fillRect(cx-ww,y,ww*2,1);
+    if(y%6<2){g.fillStyle=PAL.e;g.fillRect(cx-ww,y,1,1);g.fillRect(cx+ww-1,y,1,1);}}
+  g.fillStyle=PAL.t;g.fillRect(cx-1,h-1,3,4);});
+const SPRW={
+  trees:[spruce(20,14),spruce(16,12),spruce(24,16),spruce(14,10),
+    pix('...W..../..WWW.../.WtWWW../..ttW.../WWtt..../.Wt...../..t...../..t.....'),
+    pix('..W..W../..tW.W../..ttt.../...t..../...t..../...t....')],
+  bushes:[pix('..WWW../.WWWWW./WWWWWWi/WWWWWii/.Wiiii./..iii..'),pix('.WWW./WWWWi/WWiii/.iii.')],
+  flowers:[pix('.W../WWi/.ii.'),pix('..../.Wi./.ii.'),pix('W./i.'),pix('...../.WW../.WWi./..ii.')],
+  snowmen:[pix('..WWW.../..WWW.../.WkWkW../.WWOOW../.WWWW.W/WWWkWWW/WWkWWW./WWWkWW./.WWWW.i/.iiii...'),pix('...kkk../...kkk../..kkkkk./..WWW.../.WkWkW../.WWOWW../.WWWWW../WWkWWW./WWWkWW./.WWWW../..iii..')],
+  signs:SPR.signs.map(sp=>mk(sp.width,sp.height+1,g=>{g.drawImage(sp,0,1);g.fillStyle=PAL.W;g.fillRect(1,0,sp.width-2,2);})),
+  lamp:SPR.lamp,
+  rock:pix('.WWW./WWWWi/sWsii/.sss.')
+};
 const coinFrames=[8,6,2,6].map(w=>mk(8,8,g=>{for(let y=0;y<8;y++)for(let x=0;x<8;x++){const nx=(x+.5-4)/(w/2),ny=(y+.5-4)/4,d=nx*nx+ny*ny;if(d<=1){g.fillStyle=d>.62?'#8a5a00':d<.2&&w>2?'#ff8c2b':'#ffd60a';g.fillRect(x,y,1,1);}}}));
 const grassTile=mk(32,32,g=>{let s=7;const r=()=>(s=(s*16807)%2147483647)/2147483647;
   for(let i=0;i<46;i++){g.fillStyle='#62b843';g.fillRect(r()*32|0,r()*32|0,1+(r()*2|0),1);}
   for(let i=0;i<26;i++){g.fillStyle='#7fd15b';g.fillRect(r()*32|0,r()*32|0,1,1);}
   for(let i=0;i<10;i++){g.fillStyle='#4f9f38';g.fillRect(r()*32|0,r()*32|0,1,2);}});
+const snowTile=mk(32,32,g=>{let s=11;const r=()=>(s=(s*16807)%2147483647)/2147483647;
+  for(let i=0;i<34;i++){g.fillStyle='#d9e7f7';g.fillRect(r()*32|0,r()*32|0,1+(r()*3|0),1);}
+  for(let i=0;i<14;i++){g.fillStyle='#ffffff';g.fillRect(r()*32|0,r()*32|0,1,1);}
+  for(let i=0;i<8;i++){g.fillStyle='#c3d6ee';g.fillRect(r()*32|0,r()*32|0,2,1);}});
+
+/* =====================================================================
+   4b. SEASONS — легко додати нову пору року чи біом
+   ===================================================================== */
+const SEASONS={
+  summer:{ground:'#6cc24a',tile:grassTile,shoulder:'#c9b98a',road:'#3b3f4a',edge:'#f5f5f5',spr:SPR,snow:false},
+  winter:{ground:'#eef4ff',tile:snowTile,shoulder:'#ffffff',road:'#454a58',edge:'#dde6f2',spr:SPRW,snow:true}
+};
+function detectSeason(){
+  const q=new URLSearchParams(location.search).get('season');if(SEASONS[q])return q;      // ?season=winter для перевірки
+  const d=new Date(),m=d.getMonth()+1,day=d.getDate();
+  return (m===11&&day>=20)||m===12||m===1||m===2||(m===3&&day===1)?'winter':'summer';   // зима: 20.11 – 01.03
+}
+const SEASON=detectSeason(),TH=SEASONS[SEASON];
+document.documentElement.dataset.season=SEASON;
 
 /* =====================================================================
    5. SOUND
@@ -632,7 +680,7 @@ function resize(){
   W=innerWidth;H=innerHeight;dpr=Math.min(2,window.devicePixelRatio||1);
   cv.width=Math.max(1,W*dpr|0);cv.height=Math.max(1,H*dpr|0);
   VH=W>H*1.2?820:1000;S=H/VH;VW=W/S;CX=VW/2;PY=VH*CONFIG.playerY;
-  grassPat=ctx.createPattern(grassTile,'repeat');
+  grassPat=ctx.createPattern(TH.tile,'repeat');
   if(run){if(state!=='play'){geo.laneW=laneWTarget(geo.lanes);}render();}
 }
 
@@ -647,16 +695,17 @@ const Scene={objs:[],next:[0,0],forest:[0,0],lampD:300,signD:900,
     if(o.length&&o[0].y>VH+160)this.objs=o.filter(q=>q.y<=VH+160);
     const space=Math.max(140,VW/2-geo.lanes*geo.laneW/2);
     for(let s=0;s<2;s++){this.next[s]-=d;this.forest[s]-=d;if(this.next[s]>0)continue;const side=s?1:-1;
-      if(this.forest[s]>0){const n=2+(Math.random()*3|0);for(let i=0;i<n;i++)this.add(pick(SPR.trees),side,78+Math.random()*space,-110-Math.random()*70);this.next[s]=rand(60,105);}
+      if(this.forest[s]>0){const n=2+(Math.random()*3|0);for(let i=0;i<n;i++)this.add(pick(TH.spr.trees),side,78+Math.random()*space,-110-Math.random()*70);this.next[s]=rand(60,105);}
       else{const q=Math.random();
-        if(q<.34)this.add(pick(SPR.trees),side,82+Math.random()*space,-110);
-        else if(q<.6)this.add(pick(SPR.bushes),side,46+Math.random()*space,-110);
-        else if(q<.92)this.add(pick(SPR.flowers),side,44+Math.random()*space,-110);
-        else this.add(SPR.rock,side,50+Math.random()*space,-110);
+        if(q<.34)this.add(pick(TH.spr.trees),side,82+Math.random()*space,-110);
+        else if(q<.6)this.add(pick(TH.spr.bushes),side,46+Math.random()*space,-110);
+        else if(q<.92)this.add(pick(TH.spr.flowers),side,44+Math.random()*space,-110);
+        else if(TH.spr.snowmen&&Math.random()<.5)this.add(pick(TH.spr.snowmen),side,60+Math.random()*space,-110);
+        else this.add(TH.spr.rock,side,50+Math.random()*space,-110);
         this.next[s]=rand(90,260);if(Math.random()<.07)this.forest[s]=rand(900,2600);}
     }
-    this.lampD-=d;if(this.lampD<=0){this.add(SPR.lamp,-1,8,-110,false);this.add(SPR.lamp,1,8,-110,true);this.lampD=820;}
-    this.signD-=d;if(this.signD<=0){this.add(pick(SPR.signs),Math.random()<.5?-1:1,40,-110);this.signD=rand(1700,4200);}
+    this.lampD-=d;if(this.lampD<=0){this.add(TH.spr.lamp,-1,8,-110,false);this.add(TH.spr.lamp,1,8,-110,true);this.lampD=820;}
+    this.signD-=d;if(this.signD<=0){this.add(pick(TH.spr.signs),Math.random()<.5?-1:1,40,-110);this.signD=rand(1700,4200);}
   },
   draw(g,rw){const P=5,o=this.objs;for(let i=o.length-1;i>=0;i--){const q=o[i],w=q.spr.width*P,h=q.spr.height*P,x=CX+q.side*(rw/2+q.off);
       if(x+w<0||x-w>VW)continue;
@@ -678,7 +727,8 @@ function newRun(mode){
     v:LV[0].speed*M.speedMul*.6,slow:1,inv:0,energy:0,nitroT:0,maxSpeed:false,
     p:{lane:1,pos:1},cars:[],items:[],parts:[],
     nextV:500,nextC:700,nextN:2500,nextH:6000,shake:0,flash:0,dead:false,deadT:0,ended:false,
-    newRecord:false,isBest:false,unlocked:[],achT:0,moves:0};
+    newRecord:false,isBest:false,unlocked:[],achT:0,moves:0,flakes:[]};
+  if(TH.snow)for(let i=0;i<70;i++)run.flakes.push({x:Math.random()*VW,y:Math.random()*VH,s:rand(3,7),v:rand(60,140),w:Math.random()*6.28});
   Scene.reset();
 }
 
@@ -790,6 +840,7 @@ function update(dt){
   Scene.advance(d);
   for(const p of r.parts){p.x+=p.vx*dt;p.y+=(p.vy+r.v*.5)*dt;p.l-=dt;}
   r.parts=r.parts.filter(p=>p.l>0);
+  if(TH.snow)for(const f of r.flakes){f.w+=dt*2;f.y+=(f.v+r.v*.45)*dt;f.x+=Math.sin(f.w)*18*dt;if(f.y>VH+10){f.y=-10;f.x=Math.random()*VW;}}
 
   // очки та рівні
   if(!r.dead){r.score=Math.floor(r.dist*CONFIG.scorePerUnit)+r.coins*CONFIG.coinScore;
@@ -806,14 +857,16 @@ function render(){
   g.setTransform(S*dpr,0,0,S*dpr,0,0);g.imageSmoothingEnabled=false;
   if(r.shake>0)g.translate((Math.random()-.5)*r.shake*34,(Math.random()-.5)*r.shake*34);
   // трава
-  g.fillStyle='#6cc24a';g.fillRect(-40,-40,VW+80,VH+80);
+  g.fillStyle=TH.ground;g.fillRect(-40,-40,VW+80,VH+80);
   if(grassPat){const P=5,Tl=32*P;g.save();g.translate(0,(r.scroll%Tl)-Tl);g.scale(P,P);g.fillStyle=grassPat;g.fillRect(-8,0,VW/P+16,(VH+2*Tl)/P);g.restore();}
   // дорога
   const rw=geo.lanesF*geo.laneW,x0=CX-rw/2,k=geo.laneW/20;
-  g.fillStyle='#c9b98a';g.fillRect(x0-20,-40,rw+40,VH+80);
+  g.fillStyle=TH.shoulder;g.fillRect(x0-20,-40,rw+40,VH+80);
+  if(TH.snow){g.fillStyle='#d6e3f3';for(let y=-40+(r.scroll%64);y<VH+40;y+=64){g.fillRect(x0-20,y,8,22);g.fillRect(x0+rw+12,y+30,8,22);}}
   g.fillStyle=K;g.fillRect(x0-6,-40,rw+12,VH+80);
-  g.fillStyle='#3b3f4a';g.fillRect(x0,-40,rw,VH+80);
-  g.fillStyle='#f5f5f5';g.fillRect(x0+7,-40,5,VH+80);g.fillRect(x0+rw-12,-40,5,VH+80);
+  g.fillStyle=TH.road;g.fillRect(x0,-40,rw,VH+80);
+  if(TH.snow){g.fillStyle='#e6edf7';for(let y=-40+(r.scroll%90);y<VH+40;y+=90){g.fillRect(x0,y,3,40);g.fillRect(x0+rw-3,y+45,3,40);}}
+  g.fillStyle=TH.edge;g.fillRect(x0+7,-40,5,VH+80);g.fillRect(x0+rw-12,-40,5,VH+80);
   g.save();g.beginPath();g.rect(x0+16,-40,rw-32,VH+80);g.clip();
   const off=r.scroll%150,nl=Math.ceil(geo.lanesF-.001);
   for(let i=1;i<nl;i++){const x=x0+i*geo.laneW-3;for(let y=-150+off;y<VH+20;y+=150)g.fillRect(x,y,6,74);}
@@ -847,6 +900,7 @@ function render(){
   // частинки
   for(const p of r.parts){g.globalAlpha=clamp(p.l*2.5,0,1);g.fillStyle=p.c;g.fillRect(p.x-p.s/2,p.y-p.s/2,p.s,p.s);}
   g.globalAlpha=1;
+  if(TH.snow){g.fillStyle='rgba(255,255,255,.9)';for(const f of r.flakes)g.fillRect(f.x,f.y,f.s,f.s);}
   // лінії швидкості
   if(r.nitroT>0){g.fillStyle='rgba(255,255,255,.55)';for(let i=0;i<16;i++){const x=Math.random()*VW,y=Math.random()*VH;g.fillRect(x,y,4,rand(70,210));}}
   if(r.flash>0){g.setTransform(1,0,0,1,0,0);g.fillStyle='rgba(255,59,59,'+(r.flash*.38)+')';g.fillRect(0,0,cv.width,cv.height);}
@@ -937,7 +991,7 @@ addEventListener('resize',resize);
    15. UI
    ===================================================================== */
 const SCREENS=['menu','modes','car','ach','stats','set'];
-function show(name){
+let show=function(name){
   SCREENS.forEach(s=>$('s-'+s).hidden=s!==name);
   $('top').hidden=!name;$('hud').hidden=!!name;
   if(name==='menu')$('heroAch').textContent=Ach.count()+'/'+ACH.length;
@@ -1011,6 +1065,15 @@ $('hcar').addEventListener('animationend',e=>e.currentTarget.classList.add('done
    ===================================================================== */
 document.querySelectorAll('img[data-pix]').forEach(i=>i.src=IURL[i.dataset.pix]);
 document.documentElement.style.setProperty('--car',save.color);
+if(SEASON==='winter'){
+  const M={'#6cc24a':'#eef4ff','#5db53f':'#d6e3f3','#1e6b2e':'#1f6b4a','#14532d':'#1a5a3e','#2f9e44':'#2d8a5e','#1f7a4d':'#27795a','#51cf66':'#f4f9ff','#2fa36b':'#f4f9ff','#c9b98a':'#ffffff'};
+  document.querySelectorAll('.hero-r svg [fill]').forEach(e=>{const f=e.getAttribute('fill').toLowerCase();if(M[f])e.setAttribute('fill',M[f]);});
+  const ns='http://www.w3.org/2000/svg',sv=document.querySelector('.hero-r svg'),gl=sv.querySelector('g[clip-path]');
+  [[20,22],[40,118],[24,300],[270,70],[284,160],[262,290],[90,60],[130,340],[220,200],[200,330],[90,220]].forEach(([x,y])=>{const r=document.createElementNS(ns,'rect');r.setAttribute('x',x);r.setAttribute('y',y);r.setAttribute('width',6);r.setAttribute('height',6);r.setAttribute('fill','#fff');r.setAttribute('stroke','#16161d');r.setAttribute('stroke-width',2);gl.appendChild(r);});
+  const sn=document.createElement('div');sn.id='snow';for(let i=0;i<22;i++){const f=document.createElement('i');f.style.setProperty('--x',(Math.random()*100)+'%');f.style.setProperty('--d',rand(7,14).toFixed(1)+'s');f.style.setProperty('--l',(-rand(0,14)).toFixed(1)+'s');sn.appendChild(f);}
+  document.body.appendChild(sn);
+  const hs=()=>{sn.hidden=!!run;};const _show=show;show=function(n){_show(n);hs();};
+}
 applyLang();resize();show('menu');
 })();
 </script>
